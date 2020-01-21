@@ -7,6 +7,14 @@ class Conf
   def self.token
     @config["token"]
   end
+
+  def self.command_prefix
+    @config["command_prefix"]
+  end
+
+  def self.superadmin_id
+    @config["admin_id"]
+  end
   
   private
   

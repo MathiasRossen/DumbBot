@@ -2,8 +2,9 @@ require "./config/application.rb"
 
 bot = Discordrb::Bot.new token: Conf.token
 
-bot.message(with_text: "Ping!") do |event|
-  event.respond "Hi #{event.user.name}!"
+bot.message(start_with: "!") do |event|
+  response = CommandsHandler.handle(event.message)
+  event.respond(response)
 end
 
 bot.run

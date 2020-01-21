@@ -1,1 +1,3 @@
 token: TOKEN_HERE
+command_prefix: \!
+superadmin_id: 212240081577181184
