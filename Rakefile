@@ -27,3 +27,7 @@ namespace :db do
     end
   end
 end
+
+task :bot do
+  exec "bundle exec ruby dumbbot.rb"
+end

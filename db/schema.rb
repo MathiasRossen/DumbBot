@@ -12,9 +12,10 @@
 
 ActiveRecord::Schema.define(version: 2020_01_21_182600) do
 
-  create_table "tests", force: :cascade do |t|
+  create_table "users", id: :string, force: :cascade do |t|
     t.string "name"
-    t.boolean "something"
+    t.boolean "admin"
+    t.string "discriminator"
   end
 
 end

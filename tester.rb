@@ -4,4 +4,4 @@ require "./config/application.rb"
 require "./modules/commands/handler.rb"
 
 command_handler = Commands::Handler.new
-response = command_handler.handle("!cat")
+response = command_handler.handle("!assbringer")

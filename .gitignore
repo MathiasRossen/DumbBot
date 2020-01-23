@@ -57,3 +57,4 @@ build-iPhoneSimulator/
 *.DS_STORE
 *.db
 bot.yml
+assets/*
