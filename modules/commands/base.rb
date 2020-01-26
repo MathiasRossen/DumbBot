@@ -4,15 +4,20 @@ module Commands
     attr_accessor :name
     attr_accessor :min_args
     attr_accessor :max_args
+    attr_accessor :requires_admin
 
     def start args, payload = nil
-      if args.length < min_args.to_i
-        return "Too few arguments supplied, expected #{min_args.to_s}. Correct usage: #{command_info}"
-      end
+      return "Too few arguments supplied, expected: #{min_args.to_s}" if args.length < min_args.to_i
 
       self.bot = payload[:bot]
       self.event = payload[:event]
       self.args = args[0...max_args.to_i]
+
+      if requires_admin 
+        user = User.find(event.user.id)
+        return "You don't have permission" unless user.admin
+      end
+      
       execute
     end
 

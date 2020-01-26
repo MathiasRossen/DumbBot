@@ -8,6 +8,10 @@ class Conf
     @config["token"]
   end
 
+  def self.api_token
+    "Bot #{token}"
+  end
+
   def self.command_prefix
     @config["command_prefix"]
   end

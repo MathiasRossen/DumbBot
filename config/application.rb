@@ -1,6 +1,7 @@
 require "active_record"
 require "require_all"
 require "discordrb"
+require "discordrb/api"
 require "./config/conf.rb"
 require_all "models/*.rb"
 

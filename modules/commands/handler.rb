@@ -2,6 +2,7 @@ require "./modules/commands/cat.rb"
 require "./modules/commands/assbringer.rb"
 require "./modules/commands/webm.rb"
 require "./modules/commands/play.rb"
+require "./modules/commands/stop.rb"
 
 module Commands
 
@@ -15,7 +16,7 @@ module Commands
     end
 
     def handle message, payload = nil
-      full_command = message.to_s[prefix.length..-1].scan /".+?"|[\w\d:\/.?=]+/
+      full_command = message.to_s[prefix.length..-1].scan /".+?"|[\w:\/.?=-]+/
       command = full_command[0]
       args = full_command - [command]
 
@@ -34,7 +35,8 @@ module Commands
         Commands::Cat.new,
         Commands::Assbringer.new,
         Commands::Webm.new,
-        Commands::Play.new
+        Commands::Play.new,
+        Commands::Stop.new
       ]
     end
   end

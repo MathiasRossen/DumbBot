@@ -31,3 +31,9 @@ end
 task :bot do
   exec "bundle exec ruby dumbbot.rb"
 end
+
+task :clear do
+  Dir["assets/temp/*"].each do |f|
+    File.delete f
+  end
+end
